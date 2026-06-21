@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "os-clean"
+version = "0.1.0"
+description = "Safe, interactive CLI tool to explore and clean your Linux system (Fedora-first)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Personal Tool"}
+]
+keywords = [
+    "linux",
+    "fedora",
+    "cleanup",
+    "disk-space",
+    "cli",
+    "system-maintenance",
+    "journal",
+    "kernel"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "rich>=13.0",
+    "questionary>=2.0",
+]
+
+[project.scripts]
+os-clean = "os_clean.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yourname/os-clean"
+Issues = "https://github.com/yourname/os-clean/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"os_clean" = ["*.py"]
